@@ -39,7 +39,7 @@ include("config.php");
 	=========================================================-->
 <title>Deshmukh - Real Estate Template</title>
 </head>
-<body>
+<body><!--This the body tag-->
 
 <!--	Page Loader  -->
 <!--<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
