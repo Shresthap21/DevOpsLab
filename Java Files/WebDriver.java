@@ -17,7 +17,7 @@ public class WebDriver {
             // Navigate to the website
             driver.get("http://localhost/Real-estate-php");
 
-            // TEST CASE 1: Validate Page Title
+            //KARAN TEST CASE 1: Validate Page Title
             String expectedTitle = "Your Real Estate Website Title";  // Update with actual title
             String actualTitle = driver.getTitle();
             System.out.println("Page Title: " + actualTitle);
@@ -27,7 +27,7 @@ public class WebDriver {
                 System.out.println("❌ Test Case 1 Failed: Page title is incorrect.");
             }
 
-            // TEST CASE 2: Validate Logo Presence
+            //KARAN TEST CASE 2: Validate Logo Presence
             try {
                 WebElement logoElement = driver.findElement(By.xpath("//*[@id='header']"));
                 if (logoElement.isDisplayed()) {
@@ -38,7 +38,7 @@ public class WebDriver {
             } catch (Exception e) {
                 System.out.println("❌ Test Case 2 Failed: Logo element not found.");
             }
-            // TEST CASE 3: Property Search Functionality
+            //SHRESTHA TEST CASE 3: Property Search Functionality
             try {
                 WebElement searchBox = driver.findElement(By.name("search")); // Update with actual name
                 WebElement searchButton = driver.findElement(By.xpath("//button[text()='Search']"));
@@ -51,7 +51,7 @@ public class WebDriver {
             }
 
 
-            // TEST CASE 4: Footer Section Validation
+            //SHRESTHA TEST CASE 4: Footer Section Validation
             try {
                 WebElement footer = driver.findElement(By.tagName("footer"));
                 if (footer.isDisplayed()) {
@@ -63,7 +63,7 @@ public class WebDriver {
                 System.out.println("❌ Test Case 4 Failed: Footer not found.");
             }
             
-            // TEST CASE 5: Validate Navigation Links
+            //AKASH TEST CASE 5: Validate Navigation Links
             String[] navLinks = {"Home", "About Us", "Services", "Contact Us"}; // Update if necessary
             for (String linkText : navLinks) {
                 try {
@@ -80,7 +80,7 @@ public class WebDriver {
 
       
 
-            // TEST CASE 6: Sign-Up Functionality
+            //AKASH TEST CASE 6: Sign-Up Functionality
             try {
                 driver.findElement(By.name("signup_username")).sendKeys("newuser"); // Update field names
                 driver.findElement(By.name("signup_email")).sendKeys("newuser@example.com");
@@ -92,7 +92,7 @@ public class WebDriver {
                 System.out.println("❌ Test Case 6 Failed: Sign-up elements not found.");
             }
 
-         // TEST CASE 7: Contact Form Submission
+         //ABDULLAH TEST CASE 7: Contact Form Submission
             try {
                 WebElement nameField = driver.findElement(By.name("name"));
                 WebElement emailField = driver.findElement(By.name("email"));
@@ -109,7 +109,7 @@ public class WebDriver {
                 System.out.println("❌ Test Case 7 Failed: Contact form elements not found.");
             }
 
-            // TEST CASE 8: User Login Functionality
+            //ABDULLAH TEST CASE 8: User Login Functionality
             try {
                 driver.findElement(By.name("username")).sendKeys("testuser"); // Update field names
                 driver.findElement(By.name("password")).sendKeys("testpassword");
