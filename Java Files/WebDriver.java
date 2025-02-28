@@ -45,9 +45,9 @@ public class WebDriver {
 
                 searchBox.sendKeys("Apartment");
                 searchButton.click();
-                System.out.println("✅ Test Case 4 Passed: Property search executed.");
+                System.out.println("✅ Test Case 3 Passed: Property search executed.");
             } catch (Exception e) {
-                System.out.println("❌ Test Case 4 Failed: Search functionality issue.");
+                System.out.println("❌ Test Case 3 Failed: Search functionality issue.");
             }
 
 
@@ -55,13 +55,75 @@ public class WebDriver {
             try {
                 WebElement footer = driver.findElement(By.tagName("footer"));
                 if (footer.isDisplayed()) {
-                    System.out.println("✅ Test Case 8 Passed: Footer is displayed.");
+                    System.out.println("✅ Test Case 4 Passed: Footer is displayed.");
                 } else {
-                    System.out.println("❌ Test Case 8 Failed: Footer is missing.");
+                    System.out.println("❌ Test Case 4 Failed: Footer is missing.");
                 }
             } catch (Exception e) {
-                System.out.println("❌ Test Case 8 Failed: Footer not found.");
+                System.out.println("❌ Test Case 4 Failed: Footer not found.");
             }
+            
+            // TEST CASE 5: Validate Navigation Links
+            String[] navLinks = {"Home", "About Us", "Services", "Contact Us"}; // Update if necessary
+            for (String linkText : navLinks) {
+                try {
+                    WebElement navLink = driver.findElement(By.xpath("//a[text()='" + linkText + "']"));
+                    if (navLink.isDisplayed()) {
+                        System.out.println("✅ Test Case 5 Passed: '" + linkText + "' link is visible.");
+                    } else {
+                        System.out.println("❌ Test Case 5 Failed: '" + linkText + "' link is not visible.");
+                    }
+                } catch (Exception e) {
+                    System.out.println("❌ Test Case 5 Failed: '" + linkText + "' link not found.");
+                }
+            }
+
+      
+
+            // TEST CASE 6: Sign-Up Functionality
+            try {
+                driver.findElement(By.name("signup_username")).sendKeys("newuser"); // Update field names
+                driver.findElement(By.name("signup_email")).sendKeys("newuser@example.com");
+                driver.findElement(By.name("signup_password")).sendKeys("newpassword");
+                driver.findElement(By.xpath("//button[text()='Sign Up']")).click();
+
+                System.out.println("✅ Test Case 6 Passed: Sign-up attempted.");
+            } catch (Exception e) {
+                System.out.println("❌ Test Case 6 Failed: Sign-up elements not found.");
+            }
+
+         // TEST CASE 7: Contact Form Submission
+            try {
+                WebElement nameField = driver.findElement(By.name("name"));
+                WebElement emailField = driver.findElement(By.name("email"));
+                WebElement messageField = driver.findElement(By.name("message"));
+                WebElement submitButton = driver.findElement(By.xpath("//button[text()='Submit']"));
+
+                nameField.sendKeys("John Doe");
+                emailField.sendKeys("john.doe@example.com");
+                messageField.sendKeys("I am interested in your properties.");
+                submitButton.click();
+
+                System.out.println("✅ Test Case 7 Passed: Contact form submitted.");
+            } catch (Exception e) {
+                System.out.println("❌ Test Case 7 Failed: Contact form elements not found.");
+            }
+
+            // TEST CASE 8: User Login Functionality
+            try {
+                driver.findElement(By.name("username")).sendKeys("testuser"); // Update field names
+                driver.findElement(By.name("password")).sendKeys("testpassword");
+                driver.findElement(By.xpath("//button[text()='Login']")).click();
+
+                System.out.println("✅ Test Case 8 Passed: Login attempted.");
+            } catch (Exception e) {
+                System.out.println("❌ Test Case 8 Failed: Login elements not found.");
+            }
+
+
+
+            
+            
             
 
             // Wait before closing the browser (for demonstration)
